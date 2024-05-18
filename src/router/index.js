@@ -3,6 +3,9 @@ import MahasiswaUi from '@/components/MahasiswaUi.vue'
 import BukuUi from '@/components/BukuUi.vue'
 import TransaksiUi from '@/components/TransaksiUi.vue'
 import InquiryTrnUi from '@/components/InquiryTrnUi.vue'
+import DataMahasiswaUi from '@/components/DataMahasiswaUi.vue'
+import DataBukuUi from '@/components/DataBukuUi.vue'
+import RakBukuUi from '@/components/RakBukuUi.vue'
 
 const routes = [
     {
@@ -24,6 +27,21 @@ const routes = [
       path: '/inquirybuku',
       name: 'InquiryBuku',
       component: InquiryTrnUi,
+    },
+    {
+      path: '/datamahasiswa',
+      name: 'DataMahasiswa',
+      component: DataMahasiswaUi,
+    },
+    {
+      path: '/databuku',
+      name: 'DataBuku',
+      component: DataBukuUi,
+    },
+    {
+      path: '/rakbuku',
+      name: 'RakBuku',
+      component: RakBukuUi,
     },
   ];
   

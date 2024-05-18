@@ -17,10 +17,21 @@
                     class="form-control" required />
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="lokasi-buku">Lokasi Buku</label>
                 <input v-model="formData.LokasiRak" type="number" name="lokasi-buku" id="lokasi-buku"
                     class="form-control" required />
+            </div> -->
+
+            <div class="form-group">
+                <label for="nama-buku">Lokasi Buku</label>
+                <select v-model="formData.LokasiRak"  name="lokasi-buku" id="lokasi-buku"
+                    class="form-control" required>
+                    <option>Pilih:</option>
+                    <option v-for="item in dataRakInventory" :key="item.id" :value="item.id">
+                        {{ item.namaRak }}
+                    </option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -29,6 +40,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>
+            <router-link to="/databuku" class="btn btn-success" style="margin-left: 4px;">Data Buku</router-link>
         </form>
     </div>
 </template>
@@ -47,8 +59,13 @@ export default {
                 Penerbit: '',
                 LokasiRak: 0,
                 StokBuku: 0
-            }
+            },
+            dataRakInventory: []
         };
+    },
+
+    created() {
+        this.getAllRakInventory()
     },
 
     methods: {
@@ -59,6 +76,12 @@ export default {
                 }
             }).then(() => {
                 alert('Buku baru disimpan')
+            })
+        },
+
+        async getAllRakInventory() {
+            axios.get('http://localhost:5068/api/inventory/getallinventory').then(res => {
+                this.dataRakInventory = res.data
             })
         }
     }

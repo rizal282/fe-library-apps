@@ -15,6 +15,7 @@
                 <ul class="nav navbar-nav">
                     <li><router-link to="/" class="nav-link">Mahasiswa</router-link></li>
                     <li><router-link to="/buku" class="nav-link">Buku</router-link></li>
+                    <li><router-link to="/rakbuku" class="nav-link">Rak Buku</router-link></li>
                     <li><router-link to="/transaksibuku" class="nav-link">Transaksi</router-link></li>
                     <li><router-link to="/inquirybuku" class="nav-link">Inquiry</router-link></li>
                 </ul>

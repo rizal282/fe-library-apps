@@ -20,6 +20,7 @@
                 <label for="aktif-flag">Aktif</label>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
+            <router-link to="/datamahasiswa" class="btn btn-success" style="margin-left: 4px;">Data Mahasiswa</router-link>
         </form>
     </div>
 </template>
